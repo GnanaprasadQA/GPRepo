@@ -1,25 +1,26 @@
 # GPRepo
- Below code is to automate placing an order in the website http://automationpractice.com/index.php?
+ Below code is to automate placing an order in the website http://automationpractice.com/index.php? and capture the screenshot of order placed 
 
 
-	import java.io.File;
-	import java.util.concurrent.TimeUnit;
-	import javax.imageio.ImageIO;
-	import org.apache.commons.io.FileUtils;
-	import org.openqa.selenium.By;
-	import org.openqa.selenium.JavascriptExecutor;
-	import org.openqa.selenium.OutputType;
-	import org.openqa.selenium.TakesScreenshot;
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
-	import org.openqa.selenium.chrome.ChromeDriver;
-	import org.openqa.selenium.interactions.Actions;
-	import org.openqa.selenium.support.ui.Select;
-	import ru.yandex.qatools.ashot.AShot;
-	import ru.yandex.qatools.ashot.Screenshot;
-	import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+		package OnlineShopping;
+
+		import java.io.File;
+		import java.util.concurrent.TimeUnit;
+		import org.apache.commons.io.FileUtils;
+		import org.openqa.selenium.By;
+		import org.openqa.selenium.JavascriptExecutor;
+		import org.openqa.selenium.OutputType;
+		import org.openqa.selenium.TakesScreenshot;
+		import org.openqa.selenium.WebDriver;
+		import org.openqa.selenium.WebElement;
+		import org.openqa.selenium.chrome.ChromeDriver;
+		import org.openqa.selenium.interactions.Actions;
+		import org.openqa.selenium.support.ui.Select;
+
+
 
 		public class OnlineProductBuy {
+
 		public static void main(String[] args) throws Exception{
 		WebDriver driver = null;
 		try{
@@ -35,9 +36,6 @@
 		driver.findElement(By.xpath("//*[@id='SubmitLogin']/span/i")).click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//*[@id='center_column']/div/div[1]/ul/li[3]/a/span")).click();
-		//driver.findElement(By.xpath("//*[@id='center_column']/div[1]/div/div/ul/li[9]/a[2]/span")).click();
-		//driver.switchTo().alert().accept();
-		
 		driver.findElement(By.xpath("//*[@id='center_column']/div/a/span")).click();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//*[@id='firstname']")).clear();
@@ -66,13 +64,10 @@
 		actions.moveToElement(target).perform();
 		
 		driver.findElement(By.xpath("//*[@id='block_top_menu']/ul/li[1]/ul/li[2]/ul/li[3]/a")).click();
-		
 		driver.findElement(By.xpath("//*[@id='list']")).click();
 		
 		//for first item
 		driver.findElement(By.xpath("//*[@id='center_column']/ul/li[1]/div/div/div[2]/h5/a")).click();
-		//WebElement qtyIncrease=driver.findElement(By.xpath("//*[@id='quantity_wanted']"));
-		//actions.doubleClick(qtyIncrease).perform();
 		WebElement button1 = driver.findElement(By.xpath("//*[@id='quantity_wanted_p']/a[2]/span"));
 		for (int i = 0; i < 4; i++){
 			 //click the button
@@ -134,12 +129,6 @@
 		 File DestFile=new File("D://test.png");
 		 FileUtils.copyFile(screenshotFile, DestFile);
 		 
-		 
-		/* Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-		 ImageIO.write(screenshot.getImage(), "jpg", new File("c:\\ElementScreenshot.jpg"));
-		 
-		 */
-		 
 		 System.out.println("Ordered and screenshot taken successfully");
 		 
 		 driver.findElement(By.xpath("//*[@id='header']/div[2]/div/div/nav/div[2]/a")).click();
@@ -150,9 +139,9 @@
 			e.printStackTrace();
 		}
 		 
-		/*finally{
+		finally{
 			driver.quit();
-			
-		}*/
+			}
 		}}
+
 
