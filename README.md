@@ -1,5 +1,5 @@
 # GPRepo
-GP's first repo
+ Below code is to automate placing an order in the website http://automationpractice.com/index.php?
 
 
 	import java.io.File;
