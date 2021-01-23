@@ -2,31 +2,25 @@
 GP's first repo
 
 
-import java.io.File;
-import java.util.concurrent.TimeUnit;
+	import java.io.File;
+	import java.util.concurrent.TimeUnit;
+	import javax.imageio.ImageIO;
+	import org.apache.commons.io.FileUtils;
+	import org.openqa.selenium.By;
+	import org.openqa.selenium.JavascriptExecutor;
+	import org.openqa.selenium.OutputType;
+	import org.openqa.selenium.TakesScreenshot;
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.WebElement;
+	import org.openqa.selenium.chrome.ChromeDriver;
+	import org.openqa.selenium.interactions.Actions;
+	import org.openqa.selenium.support.ui.Select;
+	import ru.yandex.qatools.ashot.AShot;
+	import ru.yandex.qatools.ashot.Screenshot;
+	import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
-import javax.imageio.ImageIO;
-
-
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-
-public class OnlineProductBuy {
-
-	public static void main(String[] args) throws Exception{
+		public class OnlineProductBuy {
+		public static void main(String[] args) throws Exception{
 		WebDriver driver = null;
 		try{
 			System.setProperty("webdriver.chrome.driver", "D:/drivers/chromedriver_win32/chromedriver.exe");
@@ -160,7 +154,5 @@ public class OnlineProductBuy {
 			driver.quit();
 			
 		}*/
-	}
-
-}
+		}}
 
